@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: audit
+
+  Kafka:
+    bootstrapServers: kafka:9092
+    producer:
+      topic: administration
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:postgresql://postgres:5432/audit
+    username: postgres
+    password: postgres
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
